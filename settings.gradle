@@ -1,0 +1,5 @@
+rootProject.name = "store-microservices-sample"
+
+include "client"
+include "auth-server"
+include "resource-server"
