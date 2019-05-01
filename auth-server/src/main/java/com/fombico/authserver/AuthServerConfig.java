@@ -23,6 +23,12 @@ public class AuthServerConfig implements AuthorizationServerConfigurer {
     @Value("${clientApi.redirectUrl}")
     private String clientApiRedirectUrl;
 
+    @Value("${clientBatch.id}")
+    private String clientBatchId;
+
+    @Value("${clientBatch.secret}")
+    private String clientBatchSecret;
+
     private PasswordEncoder passwordEncoder;
     private JwtAccessTokenConverter jwtAccessTokenConverter;
     private UserDetailsService userDetailsService;
@@ -44,13 +50,19 @@ public class AuthServerConfig implements AuthorizationServerConfigurer {
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
                 .withClient(clientApiId)
-                .secret(passwordEncoder.encode(clientApiSecret))
-                .redirectUris(clientApiRedirectUrl)
-                .authorizedGrantTypes("authorization_code", "refresh_token")
-                .scopes("myscope")
-                .autoApprove(true)
-                .accessTokenValiditySeconds(5)
-                .refreshTokenValiditySeconds(60)
+                    .secret(passwordEncoder.encode(clientApiSecret))
+                    .redirectUris(clientApiRedirectUrl)
+                    .authorizedGrantTypes("authorization_code", "refresh_token")
+                    .scopes("myscope")
+                    .autoApprove(true)
+                    .accessTokenValiditySeconds(5)
+                    .refreshTokenValiditySeconds(60)
+                .and()
+                .withClient(clientBatchId)
+                    .secret((passwordEncoder.encode(clientBatchSecret)))
+                    .authorizedGrantTypes("client_credentials")
+                    .scopes("myscope")
+                    .autoApprove(true)
         ;
     }
 

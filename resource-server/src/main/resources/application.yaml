@@ -15,3 +15,6 @@ security:
           PeSGmWGromygOo1yvq2YrJRJU3Q3BuhngOti8P3eJyUFJoGvbC7L1nEi0HFGU5bw
           WQIDAQAB
           -----END PUBLIC KEY-----
+spring:
+  application:
+    name: "Resource Server"

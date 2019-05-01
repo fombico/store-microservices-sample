@@ -28,3 +28,6 @@ proxy:
   auth:
     routes:
       api: oauth2
+spring:
+  application:
+    name: "Web Client"

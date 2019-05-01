@@ -1,0 +1,15 @@
+security:
+  oauth2:
+    client:
+      clientId: 4c686c70-e808-4de2-91b3-5465dd07fa11
+      clientSecret: b4ef0d67-0923-421a-b81e-231b3a2bc2df
+      accessTokenUri: http://localhost:8090/authserver/oauth/token
+      userAuthorizationUri: http://localhost:8090/authserver/oauth/authorize
+      grantType: client_credentials
+
+spring:
+  application:
+    name: "Batch Job"
+  main:
+    allow-bean-definition-overriding: true
+    web-application-type: none

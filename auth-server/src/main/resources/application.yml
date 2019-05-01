@@ -11,6 +11,11 @@ clientApi:
   secret: fc8589ba-fab5-45ab-b8e7-79ce3cbc4b73
   redirectUrl: http://localhost:8080/login
 
+# This client uses Client Credentials
+clientBatch:
+  id: 4c686c70-e808-4de2-91b3-5465dd07fa11
+  secret: b4ef0d67-0923-421a-b81e-231b3a2bc2df
+
 security:
   oauth2:
     authorization:
@@ -43,3 +48,7 @@ security:
           TPurz1sXYB/zppEUR+PKdQffmderK26zptek5CgrOETvN46Rn3L0YiwZwnLufYST
           3xMx/nFBZl2ZJ7MC6XY1OTKo9KjY2KVepCug7Z3BU9NEUwe2xP8Z
           -----END RSA PRIVATE KEY-----
+
+spring:
+  application:
+    name: "Auth Server"
